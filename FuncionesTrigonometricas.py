@@ -1,5 +1,6 @@
 """
 >>> fT = funcionesTrigonometricas(10)
+>>> fT.convertirGradosARadianes()
 >>> fT.calcularSeno()
 0.17364817766693033
 >>> fT.calcularCoseno()
@@ -21,7 +22,7 @@ Se importa la librería math para poder realizar las operaciones de seno, coseno
 class funcionesTrigonometricas:
 
     """
-    Datos necesitados para poder realizar la operacion
+    Datos necesitados para poder realizar la operación
     """
     __numG = float(0)
     __numG2 = float(0)
@@ -31,7 +32,6 @@ class funcionesTrigonometricas:
 
     def __init__(self, numG):
         self.__numG = numG
-        self.__numG2 = math.radians(self.__numG)
 
     """
     Dentro del método constructor se realiza la conversion del valor float a radianes para realizar las respectivas 
@@ -41,6 +41,8 @@ class funcionesTrigonometricas:
     """
     Se declara el método constructor con un solo valor a ingresar, que es el ángulo que introducirá el usuario.
     """
+    def convertirGradosARadianes(self):
+        self.__numG2 = math.radians(self.__numG)
 
     def calcularSeno(self):
         self.__resultadoSeno = math.sin(self.__numG2)
